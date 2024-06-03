@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from "./components/LandingPage";
+import LoginSignupPage from "./components/LoginSignupPage";
+import RoleSelectionPage from "./components/RoleSelectionPage";
+import AdminDashboard from "./components/AdminDashboard";
+import ClientDashboard from "./components/ClientDashboard";
+
+//import react router dom
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {" "}
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginSignupPage />} />
+          <Route path="/role" element={<RoleSelectionPage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/client" element={<ClientDashboard />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
